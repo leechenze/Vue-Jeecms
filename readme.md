@@ -424,34 +424,35 @@ npm run build
 ```
 
 ## 4、SRC目录结构
-┌─api            	      接口目录
-├─assets            		静态资源目录
-├─components            复用组件目录
-├─directive             vue指令目录
-├─i18n                  国际化配置目录
-├─layouts               布局组件目录
-├─routes                vue路由配置目录
-├─routes                vue路由配置目录
-├─store                 vuex存储目录
-├─views                 业务页面目录
-│  ├─Column             栏目管理
-│  ├─Config             配置
-│  ├─Content            内容管理
-│  ├─Exception          异常
-│  ├─InMail             站内信
-│  ├─Interact           互动
-│  ├─Login              登录
-│  ├─Social             媒体
-│  ├─Statistics         网站统计
-│  ├─System             系统管理
-│  ├─VIP                会员管理
-│  └─WorkPlace          工作台
-├─main.js               Vue初始化入口文件
-└─App.vue               应用配置
+    
+    ┌─api            	      接口目录
+    ├─assets            		静态资源目录
+    ├─components            复用组件目录
+    ├─directive             vue指令目录
+    ├─i18n                  国际化配置目录
+    ├─layouts               布局组件目录
+    ├─routes                vue路由配置目录
+    ├─routes                vue路由配置目录
+    ├─store                 vuex存储目录
+    ├─views                 业务页面目录
+    │  ├─Column             栏目管理
+    │  ├─Config             配置
+    │  ├─Content            内容管理
+    │  ├─Exception          异常
+    │  ├─InMail             站内信
+    │  ├─Interact           互动
+    │  ├─Login              登录
+    │  ├─Social             媒体
+    │  ├─Statistics         网站统计
+    │  ├─System             系统管理
+    │  ├─VIP                会员管理
+    │  └─WorkPlace          工作台
+    ├─main.js               Vue初始化入口文件
+    └─App.vue               应用配置
 
-其他文件说明：
-├─.env.development      开发环境变量
-├─.env.production       生产环境变量
-├─element-variables.scss饿了么UI变量文件
-├─gulpfile.js           打包饿了么UI主题工具
-└─package.json          安装包配置
+    其他文件说明：
+    ├─.env.development      开发环境变量
+    ├─.env.production       生产环境变量
+    ├─element-variables.scss饿了么UI变量文件
+    ├─gulpfile.js           打包饿了么UI主题工具
+    └─package.json          安装包配置
