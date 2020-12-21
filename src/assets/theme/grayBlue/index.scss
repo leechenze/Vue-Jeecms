@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import '../mixin.scss';
+
+$jee-theme: grayBlue; // 主题名称
+$jee-bg-primary: #546E7A; // 侧栏背景色
+$jee-bg-light: #1EC6DF; // 侧栏菜单高亮色
+$jee-bg-dark: #ccf8ff; // 主题半透明色
+$jee-bg-header: #263238; // 顶部背景色
+$jee-top-icon: #ffffff; //顶部图标色
+$jee-top-font: #cccccc; //顶部字体色
+$jee-font-primary: #ffffff; // 侧栏菜单字体色
+$jee-font-primary-light: #ffffff; // 侧栏菜单字体高亮色
+$jee-font-second: #333333; // 子菜单字体色
+$jee-font-second-light: #1EC6DF; // 子菜单字体高亮色
+
+@include generate-theme(
+    $jee-bg-primary,
+    $jee-bg-light,
+    $jee-bg-dark,
+    $jee-bg-header,
+    $jee-top-icon,
+    $jee-top-font,
+    $jee-font-primary,
+    $jee-font-primary-light,
+    $jee-font-second,
+    $jee-font-second-light,
+    $jee-theme
+)

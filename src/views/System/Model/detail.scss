@@ -1,0 +1,321 @@
+.column-model-edit-container{
+  height: 100%;
+  background-color: #ffffff;
+  // 布局
+  .el-container{
+    .el-header{
+      padding-bottom: 30px;
+    }
+    .el-main{
+      padding: 0 10px;
+      height: 100%;
+      overflow-x: hidden;
+      .el-collapse{
+        border-top: 0;
+        .el-collapse-item{
+          border: 1px solid #e8e8e8;
+          border-radius: 4px;
+          padding: 0 20px 30px;
+          .el-collapse-item__header {
+            border-bottom-color: transparent;
+            height: 16px!important;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 30px 0 0;
+            &.is-active{
+              padding-bottom: 10px;
+              border-bottom-color: #e8e8e8;
+            }
+            .el-collapse-item__arrow.el-icon-arrow-right{
+              margin-right: 0;
+            }
+          }
+          .el-collapse-item__wrap{
+            border-bottom: 0;
+            .el-collapse-item__content{
+              padding-bottom: 0;
+              padding-top: 20px;
+            }
+          }
+          & + .el-collapse-item{
+            margin-top: 30px;
+          }
+        }
+      }
+      .el-row,
+      .el-col,
+      .eidtor,
+      .setting,
+      .el-tabs{
+        height: 100%;
+      }
+      .eidtor,
+      .setting{
+        box-sizing: border-box;
+        .el-tabs__item{
+          font-weight: 600;
+        }
+        .el-tabs__content{
+          height: calc(100% - 77px);
+          overflow-x: hidden;
+          overflow-y: overlay;
+        }
+        .base-form-container{
+          height: calc(100% - 87px);
+          overflow-x: hidden;
+          overflow-y: overlay;
+        }
+      }
+    }
+  }
+  // 拖动区
+  .component {
+    .drag-comp-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      max-height: 240px;
+      overflow-x: hidden;
+      overflow-y: overlay;
+      .drag-comp-item-wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border: 1px solid #f5f5f5;
+        .jee-svg-icon{
+          font-size: 24px;
+          padding-bottom: 10px;
+        }
+        .drag-comp-item{
+          font-size: 12px;
+          color: #333333;
+        }
+        cursor: move;
+        &:hover{
+          box-shadow: 0 0 2px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+      }
+    }
+    .drag-comp-list2 {
+      height: 240px;
+      overflow-x: hidden;
+      overflow-y: overlay;
+      display: block;
+      .drag-comp-item-wrap{
+        display: flex;
+        align-items: center;
+        min-height: 30px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border: 1px dashed #e8e8e8;
+        margin-bottom: 10px;
+        margin-right: 26px;
+        .jee-svg-icon{
+          font-size: 12px;
+          padding: 0 10px;
+          &.delete{
+            padding: 0;
+            margin-right: -26px;
+            font-size: 16px;
+            fill: #797979;
+            cursor: pointer;
+          }
+        }
+        .drag-comp-item{
+          font-size: 12px;
+          color: #333333;
+          flex: 1;
+        }
+        cursor: move;
+      }
+    }
+  }
+  // 放置区
+  .eidtor {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+
+    .widget-form-list {
+      min-height: 360px;
+      // 移动的影子
+      .ghost {
+        // background: #fff;
+        border: 1px dashed #1EC6DF;
+        // &::after {
+        //   background: #fff;
+        // }
+      }
+      // 放置区域的投影
+      .drag-comp-item-wrap.ghost {
+        position: relative;
+        line-height: 60px;
+        list-style: none;
+        font-size: 0;
+        .jee-svg-icon{
+          opacity: 0;
+        }
+        &::after {
+          content: '';
+          display: block;
+          // background: #fff;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          // margin-left: -32px;
+          // font-size: 16px;
+          // color: #999;
+          z-index: 10;
+        }
+      }
+    }
+    // 预览的单个元素
+    .widget-view {
+      // margin: 0;
+      // padding: 5px 10px;
+      // background: #fff;
+      position: relative;
+      cursor: move;
+      // 盖住元素，不能输入，显示拖动指针
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        display: block;
+        z-index: 1101;
+      }
+
+      // input::-webkit-input-placeholder {
+      //   color: #666;
+      //   opacity: 1;
+      // }
+      .close{
+        position: absolute;
+        opacity: 0;
+        // top: -11px;
+        // right: -11px;
+        top: 0;
+        right: 0;
+        font-size: 22px;
+        z-index: 1102;
+        cursor: pointer;
+      }
+      &:not(.active):hover {
+        background: #fafafa;
+      }
+      &:hover{
+        .close {
+          opacity: 1;
+        }
+      }
+      &.active {
+        border-width: 1px;
+        border-style: dashed;
+      }
+    }
+  }
+  .eidtor.model-column{
+    .el-tabs{
+      .el-tabs__header{
+        padding: 0 20px;
+        margin-bottom: 20px;
+        .el-tabs__nav-wrap{
+          .el-tabs__nav-prev,
+          .el-tabs__nav-next{
+            line-height: 74px;
+          }
+          .el-tabs__nav{
+            padding-bottom: 10px;
+            .el-tabs__item{
+              line-height: 16px;
+              height: 16px;
+              padding: 30px 20px 0;
+              font-weight: 600px;
+              &:nth-child(2){
+                padding-left: 0;
+              }
+              &:last-child{
+                padding-right: 0;
+              }
+            }
+          }
+          &::after{
+            height: 1px;
+            color: #e8e8e8;
+          }
+        }
+      }
+      // .el-tabs__content{
+      //   overflow: visible;
+      // }
+    }
+    .edui-editor-iframeholder{
+      height: 30px!important;
+    }
+  }
+  .eidtor.model-content{
+    padding: 20px;
+    .title-wrap{
+      margin-bottom: 30px;
+      // .el-row{
+      //   .label{
+      //     color: #666666;
+      //     font-size: 14px;
+      //   }
+      //   .el-input{
+      //     flex: 1;
+      //     padding: 6px 0;
+      //     .el-input__inner{
+      //       border:0;
+      //     }
+      //   }
+      //   .jee-svg-icon:last-of-type{
+      //     padding-left: 20px;
+      //   }
+      //   &:first-of-type{
+      //     border-bottom: 1px solid #e8e8e8;
+      //   }
+      // }
+    }
+    .content-wrap{
+      .ql-editor{
+        min-height: 400px;
+      }
+    }
+  }
+  .eidtor.model-vip{
+    .title{
+      padding: 30px 0 10px;
+      margin: 0 20px 10px;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #333333;
+    }
+  }
+  // 属性区
+  .setting {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 0 20px;
+    overflow: hidden auto;
+    .title{
+      padding: 30px 0 10px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #333333;
+    }
+  }
+}

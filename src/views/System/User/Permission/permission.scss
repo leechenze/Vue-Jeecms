@@ -1,0 +1,22 @@
+.site-permission-container{
+  header{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    .editable{
+      padding-right: 30px;
+      cursor: pointer;
+      .jee-svg-icon{
+        padding-right: 10px;
+      }
+    }
+  }
+  .btn-save{
+    padding-top: 15px;
+  }
+  .tip{
+    margin-left: 20px;
+    font-size: 14px;
+  }
+}
